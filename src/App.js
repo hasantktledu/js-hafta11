@@ -1,10 +1,24 @@
+import React, { useEffect, useRef } from "react";
 
-function App() {
+const App = () => {
+  const inputRef = useRef();
+  const goster = true
+
+  useEffect(()=>{
+    //document.querySelector("#elem1").focus()
+
+  }, [])
+
+  const onButtonClick = () => {
+    console.log(inputRef.current?.focus());
+  };
+
   return (
     <div>
-      App
+      {goster && <input id="elem1" ref={inputRef} />}
+      <button onClick={onButtonClick}>Butona Tıkla</button>
     </div>
   );
-}
+};
 
 export default App;
